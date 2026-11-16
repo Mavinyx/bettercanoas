@@ -104,7 +104,7 @@ export default function ColetaDomiciliar(){
                         className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
                         aria-label="Fechar diálogo"
                     >
-                        ✕
+                        x
                     </button>
                     <h2 className="mb-4 text-2xzl font-bold text-custom-primary">
                         Turnos de coleta: {bairroSelecionado?.nome}

@@ -12,8 +12,28 @@
     padding: 1.25rem;
     border: 1px solid var(--default);
     border-radius: 1rem;
-    background: rgb(255 255 255 / 80%);
+    background: #f5b1a367;
     box-shadow: 0 4px 14px rgb(25 37 36 / 10%);
+}
+
+.guias-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.guias-title {
+    margin: 0;
+    color: var(--primary);
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.guias-description {
+    margin: 0.75rem 0 0;
+    color: var(--quinary);
+    font-size: 1.125rem;
+    line-height: 1.5;
 }
 
 .guias-grid {
@@ -32,6 +52,14 @@
 
     .guias-panel {
         padding: 1rem 0.75rem;
+    }
+
+    .guias-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .guias-description {
+        font-size: 1rem;
     }
 
     .guias-grid {

@@ -9,7 +9,10 @@ export default function Guias() {
     return (
         <main className="guias-page">
             <div className="guias-panel">
-                <h1 className="text-center text-2xl font-bold text-custom-primary">Guias de descarte</h1>
+                <header className="guias-header">
+                    <h1 className="guias-title">Guias de descarte</h1>
+                    <p className="guias-description">Saiba como descartar corretamente cada tipo de resíduo.</p>
+                </header>
 
                 <div className="guias-grid">
                     {materiais.map((material) => (

@@ -31,8 +31,8 @@ function BarraBusca({
 
     <div className="flex w-full flex-col gap-3">
         <div className="w-full min-w-0">
-            <label htmlFor="select-bairro" className="mb-1 block text-lg font-medium text-custom-primary">Selecione um bairro:</label>
-            <select id="select-bairro" className="select w-full bg-custom-tertiary text-base" value={bairroSelecionado} onChange={handleBairroChange}>
+            <label htmlFor="select-bairro" className="mb-1 block text-lg font-medium text-[#8f493e]">Selecione um bairro:</label>
+            <select id="select-bairro" className="select w-full border-[#e08a7b] bg-[#fff8f6] text-base text-[#8f493e] focus:border-[#b85e50] focus:outline-[#b85e50]" value={bairroSelecionado} onChange={handleBairroChange}>
             <option value="">Todos os bairros</option>
                 {bairros.map((bairro) => (
                     <option key={bairro.id} value={bairro.id}>
@@ -42,8 +42,8 @@ function BarraBusca({
             </select>
         </div>
         <div className="w-full min-w-0">
-            <label htmlFor="select-material" className="mb-1 block text-lg font-medium text-custom-primary">Selecione um tipo de material:</label>
-            <select id="select-material" className="select w-full bg-custom-tertiary text-base" value={materialSelecionado} onChange={handleMaterialChange}>
+            <label htmlFor="select-material" className="mb-1 block text-lg font-medium text-[#8f493e]">Selecione um tipo de material:</label>
+            <select id="select-material" className="select w-full border-[#e08a7b] bg-[#fff8f6] text-base text-[#8f493e] focus:border-[#b85e50] focus:outline-[#b85e50]" value={materialSelecionado} onChange={handleMaterialChange}>
                 <option value="">Todos os materiais</option>
                     {materiaisData.map((material) => (
                         <option key={material.id} value={material.id}>

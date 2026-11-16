@@ -30,9 +30,9 @@ function Home(){
     return(
         <div id="home-container">
             <div id="busca-container">
-                <section className="w-full h-auto rounded-lg border border-[#c5cec7] bg-custom-secondary/40 p-6 shadow-md">
-                    <h2 className="mb-4 text-xl font-semibold text-custom-primary">
-                        Encontre um local
+                <section className="w-full h-auto rounded-lg border border-[#e08a7b] bg-[#f5b0a3]/50 p-6 shadow-md">
+                    <h2 className="mb-4 text-[1.7rem] font-semibold text-[#8f493e]">
+                       <i className="fa-solid fa-magnifying-glass"></i> Encontre um local
                     </h2>
                     <BarraBusca 
                     bairroSelecionado={bairroSelecionado}
@@ -47,7 +47,7 @@ function Home(){
                 </section>
 
                 <div className="w-full max-w-4xl mx-auto px-4 my-6">
-                    <h2 className="text-lg font-bold mb-3 text-custom-primary">Pontos de Coleta Encontrados</h2>
+                    <h2 className="text-2xl font-bold mb-3 text-custom-primary">Pontos de Coleta Encontrados</h2>
                     
                     {list.length === 0 ? (
                     <p className="text-gray-500 italic">Nenhum ponto encontrado para os filtros selecionados.</p>
