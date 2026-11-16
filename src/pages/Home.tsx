@@ -30,9 +30,9 @@ function Home(){
     return(
         <div id="home-container">
             <div id="busca-container">
-                <section className="bg-white p-6 rounded-2x1 shadow-md border-base-300 rounded-box border w-[80%] h-[50%]">
-                    <h2 className="text-x1 font-medium text-brand-dark mb-4 flex items-center gap-2">
-                        <span></span> Encontre um local
+                <section className="w-full h-auto rounded-lg border border-[#c5cec7] bg-custom-secondary/40 p-6 shadow-md">
+                    <h2 className="mb-4 text-xl font-semibold text-custom-primary">
+                        Encontre um local
                     </h2>
                     <BarraBusca 
                     bairroSelecionado={bairroSelecionado}

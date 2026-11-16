@@ -2,6 +2,7 @@ import { Route, Routes, Link } from "react-router-dom"
 import Home from "./pages/Home"
 import Guias from "./pages/Guias"
 import ColetaDomiciliar from "./pages/ColetaDomiciliar"
+import logo from "./assets/logo.png"
 function App() {
   return (
     <>
@@ -12,7 +13,7 @@ function App() {
             <Link to="/coleta-domicialiar" className="flex flex-col text-center justify-center items-center"><i className="fa-solid fa-truck"></i>Coleta</Link>
           </nav>
       </header>
-      <div id="cabeçalho" className="bg-custom-primary w-full h-[8%]">Better Canoas</div>
+      <div id="cabeçalho" className="flex bg-custom-primary w-full h-[8%] gap-6 "> <img src={logo} className="w-auto h-auto "alt="Logo Better Canoas" />Better Canoas</div>
       
       <Routes>
         <Route path="/"  element={<Home/>} />
