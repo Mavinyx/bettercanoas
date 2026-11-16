@@ -9,7 +9,7 @@ function CardColetaDom({bairro, tipoColeta, onSelecionar}: ICardeColetaDom){
     const turnos = tipoColeta === "seletiva" ? bairro.turnoSeletiva : bairro.turnoOrganica;
 
     return(
-        <div className="card h-46 w-full">
+        <div className="card h-46 w-[260px] shrink-0">
             <div className="card-body h-full bg-base-200/80 border border-custom-secondary rounded-box shadow-lg">
             <h2 className="text-xl font-semibold"> <i className="fa-solid fa-location-dot text-custom-primary"></i>{bairro.nome}</h2>
             <div className="flex flex-wrap gap-2" aria-label="Dias de coleta">

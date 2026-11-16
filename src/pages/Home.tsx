@@ -52,7 +52,7 @@ function Home(){
                     {list.length === 0 ? (
                     <p className="text-gray-500 italic">Nenhum ponto encontrado para os filtros selecionados.</p>
                     ) : (
-                    <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 scrollbar scrollbar-thumb-custom-quaternary w-[80%] h-[60%]">
+                    <div className="flex w-full overflow-x-auto snap-x snap-mandatory gap-4 pb-4 scrollbar scrollbar-thumb-custom-quaternary">
                         {list.map((ponto) => (
                         <div key={ponto.id} className="snap-center shrink-0 w-80">
                             <CardPontoColeta ponto={ponto} />

@@ -2,6 +2,7 @@ import BairroData from "../data/bairros.json"
 import type { Bairro, TipoColeta } from "../types/index.ts"
 import CardColetaDom from "../components/CardColetaDom";
 import { useState } from "react";
+import "../css/pages/coleta-domiciliar.css";
 export default function ColetaDomiciliar(){
     const bairros: Bairro[] = BairroData as Bairro[];
     const [busca, setBusca] = useState("");
@@ -19,8 +20,8 @@ export default function ColetaDomiciliar(){
         : null;
     console.log(turnosSelecionados);
     return (
-        <div className="flex w-full h-[92vh] justify-center items-center px-4 py-6 gap-20">
-            <div className="w-[20%] h-[80%] rounded-box border border-custom-secondary shadow-lg flex flex-col justify-center p-6 gap-3 bg-base-100/80">
+        <main className="coleta-page">
+            <section className="coleta-info rounded-box border border-custom-secondary bg-base-100/80 p-6 shadow-lg">
                 <div className="flex flex-col gap-2 items-center text-center text-custom-primary">
                     <i className="fa-solid fa-truck text-3xl font-bold"></i>
                     <h2 className="text-3xl font-bold">Coleta {tipoColeta === "seletiva" ? "Seletiva" : "Orgânica"}</h2>  
@@ -83,8 +84,8 @@ export default function ColetaDomiciliar(){
                         <span className="ml-auto rounded-full bg-blue-950 px-2 py-1 text-blue-100/70">16:00 às 00:20</span>
                     </p>
                 </div>
-            </div>
-            <div className="grid sm:grid-cols-3 xl:grid-cols-3 gap-4 w-[50%] overflow-y-auto h-[80%] p-4 rounded-box">
+            </section>
+            <div className="coleta-bairros-grid rounded-box p-2">
             {bairrosFiltrados.length >0 ? (bairrosFiltrados.map((bairro)=>(
                 <CardColetaDom 
                 key={bairro.id} 
@@ -128,6 +129,6 @@ export default function ColetaDomiciliar(){
                     </div>
                 </div>
             </dialog>
-        </div>
+        </main>
     )
 }
