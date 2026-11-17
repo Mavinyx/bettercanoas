@@ -5,12 +5,11 @@
     "endereco": "Rua Espumoso, 315",
     "bairro": "Mathias Velho",
     "bairrosProximos": [
-      "mathias-velho", 
-      "harmonia", 
-      "centro", 
-      "mato-grande", 
-      "sao-luis", 
-      "industrial"
+      "mathias-velho",
+      "sao-luis",
+      "harmonia",
+      "industrial",
+      "mato-grande"
     ],
     "materiaisAceitos": [
       "entulho-obra",
@@ -22,8 +21,9 @@
       "vidro",
       "metal",
       "eletronicos",
-      "oleo-cozinha"],
-    "horario": "Segunda a sexta, das 08h às 12h e das 13h às 17h; Sábado, das 08h às 12h (Domingos e Feriados: fechado)",
+      "oleo-cozinha"
+    ],
+    "horario": "Segunda a sexta, das 08h às 12h e das 13h às 17h; Sábado, das 08h às 12h",
     "latitude": -29.897662753950552,
     "longitude": -51.22349348762837,
     "urlImg": "../assets/ecopontos/ecoponto-espumoso.png"
@@ -34,9 +34,9 @@
     "endereco": "Rua Paulo Fonteles, 1560",
     "bairro": "Niterói",
     "bairrosProximos": [
-      "niteroi", 
-      "marechal-rondon", 
-      "nossa-senhora-das-graças", 
+      "niteroi",
+      "nossa-senhora-das-gracas",
+      "rio-branco",
       "fatima"
     ],
     "materiaisAceitos": [
@@ -49,8 +49,9 @@
       "vidro",
       "metal",
       "eletronicos",
-      "oleo-cozinha"],
-    "horario": "Segunda a sexta, das 08h às 12h e das 13h às 17h; Sábado, das 08h às 12h (Domingos e Feriados: fechado)",
+      "oleo-cozinha"
+    ],
+    "horario": "Segunda a sexta, das 08h às 12h e das 13h às 17h; Sábado, das 08h às 12h",
     "latitude": -29.9571708592006,
     "longitude": -51.15941870391747,
     "urlImg": "../assets/ecopontos/ecoponto-niteroi.png"
@@ -61,37 +62,10 @@
     "endereco": "Rua Hermes da Fonseca, 1770",
     "bairro": "Rio Branco",
     "bairrosProximos": [
-      "rio-branco", 
-      "fatima", 
-      "centro", 
-      "mato-grande"
-    ],
-    "materiaisAceitos": ["entulho-obra",
-      "madeira",
-      "galhos-poda",
-      "moveis-volumosos",
-      "papel-papelao",
-      "plastico",
-      "vidro",
-      "metal",
-      "eletronicos"],
-    "horario": "Todos os dias (incluindo sábados, domingos e feriados), das 08h às 12h e das 13h às 18h",
-    "latitude": -29.96638172161321,
-    "longitude": -51.1927800707319,
-    "urlImg": "../assets/ecopontos/ecoponto-rio-branco.png"
-  },
-  {
-    "id": "ecoponto-nazario",
-    "nome": "Ecoponto Nazário",
-    "endereco": "Estrada Passo do Nazário (Acesso ao Aterro Sanitário)",
-    "bairro": "Guajuviras",
-    "bairrosProximos": [
-      "guajuviras", 
-      "estancia-velha", 
-      "olaria", 
-      "sao-jose", 
-      "igara", 
-      "brigadeira"
+      "rio-branco",
+      "fatima",
+      "mato-grande",
+      "niteroi"
     ],
     "materiaisAceitos": [
       "entulho-obra",
@@ -102,8 +76,37 @@
       "plastico",
       "vidro",
       "metal",
-      "eletronicos"],
-    "horario": "Todos os dias (incluindo sábados, domingos e feriados), das 08h às 12h e das 13h às 18h",
+      "eletronicos"
+    ],
+    "horario": "Todos os dias, das 08h às 12h e das 13h às 18h",
+    "latitude": -29.96638172161321,
+    "longitude": -51.1927800707319,
+    "urlImg": "../assets/ecopontos/ecoponto-rio-branco.png"
+  },
+  {
+    "id": "ecoponto-nazario",
+    "nome": "Ecoponto Nazário",
+    "endereco": "Estrada Passo do Nazário (Acesso ao Aterro Sanitário)",
+    "bairro": "Guajuviras",
+    "bairrosProximos": [
+      "guajuviras",
+      "estancia-velha",
+      "olaria",
+      "igara",
+      "sao-jose"
+    ],
+    "materiaisAceitos": [
+      "entulho-obra",
+      "madeira",
+      "galhos-poda",
+      "moveis-volumosos",
+      "papel-papelao",
+      "plastico",
+      "vidro",
+      "metal",
+      "eletronicos"
+    ],
+    "horario": "Todos os dias, das 08h às 12h e das 13h às 18h",
     "latitude": -29.901454699785152,
     "longitude": -51.12903859612986,
     "urlImg": "../assets/ecopontos/ecoponto-nazario.png"
@@ -114,10 +117,11 @@
     "endereco": "Rua Dra. Maria Zélia Carneiro de Figueiredo, 870",
     "bairro": "Igara",
     "bairrosProximos": [
-      "brigadeira", "centro", "estancia-velha", "fatima", "guajuviras", 
-      "harmonia", "igara", "industrial", "marechal-rondon", "mathias-velho", 
-      "mato-grande", "niteroi", "nossa-senhora-das-graças", "olaria", 
-      "rio-branco", "sao-jose", "sao-luis", "industrial"
+      "igara",
+      "guajuviras",
+      "estancia-velha",
+      "marechal-rondon",
+      "sao-jose"
     ],
     "materiaisAceitos": [
       "eletronicos",
@@ -125,7 +129,8 @@
       "papel-papelao",
       "plastico",
       "metal",
-      "oleo-cozinha"],
+      "oleo-cozinha"
+    ],
     "horario": "Dias úteis, em horário comercial/acadêmico",
     "latitude": -29.899663858679027,
     "longitude": -51.15054477413573,
@@ -137,12 +142,19 @@
     "endereco": "Avenida Victor Barreto, 2110",
     "bairro": "Centro",
     "bairrosProximos": [
-      "brigadeira", "centro", "estancia-velha", "fatima", "guajuviras", 
-      "harmonia", "igara", "industrial", "marechal-rondon", "mathias-velho", 
-      "mato-grande", "niteroi", "nossa-senhora-das-graças", "olaria", 
-      "rio-branco", "sao-jose", "sao-luis", "industrial"
+      "centro",
+      "marechal-rondon",
+      "mathias-velho",
+      "harmonia",
+      "mato-grande",
+      "nossa-senhora-das-gracas",
+      "fatima",
+      "igara",
+      "sao-luis"
     ],
-    "materiaisAceitos": ["lampadas"],
+    "materiaisAceitos": [
+      "lampadas"
+    ],
     "horario": "Horário comercial do estabelecimento parceiro",
     "latitude": -29.91484141077883,
     "longitude": -51.181968534375244,
@@ -154,12 +166,14 @@
     "endereco": "Rua Primavera, 198",
     "bairro": "Rio Branco",
     "bairrosProximos": [
-      "brigadeira", "centro", "estancia-velha", "fatima", "guajuviras", 
-      "harmonia", "igara", "industrial", "marechal-rondon", "mathias-velho", 
-      "mato-grande", "niteroi", "nossa-senhora-das-graças", "olaria", 
-      "rio-branco", "sao-jose", "sao-luis", "industrial"
+      "rio-branco",
+      "niteroi",
+      "fatima"
     ],
-    "materiaisAceitos": ["eletronicos","pilhas-baterias"],
+    "materiaisAceitos": [
+      "eletronicos",
+      "pilhas-baterias"
+    ],
     "horario": "Segunda a sexta, das 08h às 12h e das 13h às 17h; Sábado, das 08h às 12h",
     "latitude": -29.960926558376443,
     "longitude": -51.17857393180554,

@@ -2,7 +2,7 @@
   --primary: #3c5759;
   --secondary: #d1ebdb;
   --default: #d0d5ce;
-  --tertiary: #efece9;
+  --tertiary: #f2f2f2;
   --quaternary: #959d90;
   --quinary: #192524;
 }
@@ -12,7 +12,7 @@ html, body, #root {
   height: 100%;
 }
 
-body {
+html {
   margin: 0;
   background: var(--tertiary);
 }
