@@ -1,0 +1,26 @@
+import type{ PontoColeta } from "../types/index.ts";
+
+const imagens = import.meta.glob<string>("../assets/ecopontos/*", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+interface ICardPontoColetaProps {
+  ponto: PontoColeta;
+}
+
+function CardPontoColeta({ ponto }: ICardPontoColetaProps) {
+  return (
+    <div className="card  m-2 h-[50%]">
+      <div className="card-body ">
+        <img src={imagens[ponto.urlImg]} alt={`Foto de ${ponto.nome}`} className="w-full shadow-xs h-48 rounded-sm object-cover" />
+        <h2 className="card-title text-[#b85e50]">{ponto.nome}</h2>
+        <p>{ponto.endereco}</p>
+        <p>{ponto.horarioFuncionamento}</p>
+      </div>
+    </div>
+  );
+}
+
+export default CardPontoColeta;

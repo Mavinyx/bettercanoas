@@ -1,0 +1,289 @@
+[
+  {
+    "id": "centro",
+    "nome": "Centro",
+    "regiao": "Centro",
+    "diasSeletiva": ["Seg"],
+    "turnoSeletiva": {
+      "Seg": ["Manhã"]
+    },
+    "diasOrganica": ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
+    "turnoOrganica": {
+      "Seg": ["Noturno"],
+      "Ter": ["Noturno"],
+      "Qua": ["Noturno"],
+      "Qui": ["Noturno"],
+      "Sex": ["Noturno"],
+      "Sáb": ["Noturno"]
+    }
+  },
+  {
+    "id": "mathias-velho",
+    "nome": "Mathias Velho",
+    "regiao": "Quadrante Noroeste",
+    "diasSeletiva": ["Ter", "Qua", "Qui", "Sex"],
+    "turnoSeletiva": {
+      "Ter": ["Manhã", "Tarde"],
+      "Qua": ["Manhã", "Tarde"],
+      "Qui": ["Manhã", "Tarde"],
+      "Sex": ["Manhã", "Tarde"]
+    },
+    "diasOrganica": ["Seg", "Qua", "Sex"],
+    "turnoOrganica": {
+      "Seg": ["Diurno", "Noturno"],
+      "Qua": ["Diurno", "Noturno"],
+      "Sex": ["Diurno", "Noturno"]
+    }
+  },
+  {
+    "id": "harmonia",
+    "nome": "Harmonia",
+    "regiao": "Quadrante Noroeste",
+    "diasSeletiva": ["Seg", "Qui"],
+    "turnoSeletiva": {
+      "Seg": ["Manhã"],
+      "Qui": ["Manhã"]
+    },
+    "diasOrganica": ["Seg", "Qua", "Sex"],
+    "turnoOrganica": {
+      "Seg": ["Noturno"],
+      "Qua": ["Noturno"],
+      "Sex": ["Noturno"]
+    }
+  },
+  {
+    "id": "sao-luis",
+    "nome": "São Luís",
+    "regiao": "Quadrante Noroeste",
+    "diasSeletiva": ["Seg", "Qui"],
+    "turnoSeletiva": {
+      "Seg": ["Manhã"],
+      "Qui": ["Manhã"]
+    },
+    "diasOrganica": ["Seg", "Qua", "Sex"],
+    "turnoOrganica": {
+      "Seg": ["Noturno"],
+      "Qua": ["Noturno"],
+      "Sex": ["Noturno"]
+    }
+  },
+  {
+    "id": "industrial",
+    "nome": "Industrial",
+    "regiao": "Quadrante Noroeste",
+    "diasSeletiva": [],
+    "turnoSeletiva": {},
+    "diasOrganica": [],
+    "turnoOrganica": {}
+  },
+  {
+    "id": "niteroi",
+    "nome": "Niterói",
+    "regiao": "Quadrante Sudeste",
+    "diasSeletiva": ["Seg", "Ter", "Qua", "Sex"],
+    "turnoSeletiva": {
+      "Seg": ["Manhã", "Tarde"],
+      "Ter": ["Manhã"],
+      "Qua": ["Manhã", "Tarde"],
+      "Sex": ["Manhã", "Tarde"]
+    },
+    "diasOrganica": ["Ter", "Qui", "Sáb"],
+    "turnoOrganica": {
+      "Ter": ["Diurno", "Noturno"],
+      "Qui": ["Diurno", "Noturno"],
+      "Sáb": ["Diurno", "Noturno"]
+    }
+  },
+  {
+    "id": "nossa-senhora-das-graças",
+    "nome": "Nossa Senhora das Graças",
+    "regiao": "Quadrante Sudeste",
+    "diasSeletiva": ["Qui", "Sáb"],
+    "turnoSeletiva": {
+      "Qui": ["Manhã", "Tarde"],
+      "Sáb": ["Manhã"]
+    },
+    "diasOrganica": ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
+    "turnoOrganica": {
+      "Seg": ["Noturno"],
+      "Ter": ["Noturno"],
+      "Qua": ["Noturno"],
+      "Qui": ["Noturno"],
+      "Sex": ["Noturno"],
+      "Sáb": ["Noturno"]
+    }
+  },
+  {
+    "id": "rio-branco",
+    "nome": "Rio Branco",
+    "regiao": "Quadrante Sudoeste",
+    "diasSeletiva": ["Ter", "Sex"],
+    "turnoSeletiva": {
+      "Ter": ["Manhã"],
+      "Sex": ["Manhã"]
+    },
+    "diasOrganica": ["Seg", "Qua", "Sex"],
+    "turnoOrganica": {
+      "Seg": ["Diurno"],
+      "Qua": ["Diurno"],
+      "Sex": ["Diurno"]
+    }
+  },
+  {
+    "id": "fatima",
+    "nome": "Fátima",
+    "regiao": "Quadrante Sudoeste",
+    "diasSeletiva": ["Qua", "Sáb"],
+    "turnoSeletiva": {
+      "Qua": ["Manhã"],
+      "Sáb": ["Manhã"]
+    },
+    "diasOrganica": ["Seg", "Qua", "Sex"],
+    "turnoOrganica": {
+      "Seg": ["Noturno"],
+      "Qua": ["Noturno"],
+      "Sex": ["Noturno"]
+    }
+  },
+  {
+    "id": "mato-grande",
+    "nome": "Mato Grande",
+    "regiao": "Quadrante Sudoeste",
+    "diasSeletiva": ["Seg"],
+    "turnoSeletiva": {
+      "Seg": ["Manhã"]
+    },
+    "diasOrganica": ["Seg", "Qua", "Sex"],
+    "turnoOrganica": {
+      "Seg": ["Diurno"],
+      "Qua": ["Diurno"],
+      "Sex": ["Diurno"]
+    }
+  },
+  {
+    "id": "guajuviras",
+    "nome": "Guajuviras",
+    "regiao": "Quadrante Nordeste",
+    "diasSeletiva": ["Ter", "Sex"],
+    "turnoSeletiva": {
+      "Ter": ["Manhã", "Tarde"],
+      "Sex": ["Manhã", "Tarde"]
+    },
+    "diasOrganica": ["Ter", "Qui", "Sáb"],
+    "turnoOrganica": {
+      "Ter": ["Diurno"],
+      "Qui": ["Diurno"],
+      "Sáb": ["Diurno"]
+    }
+  },
+  {
+    "id": "estancia-velha",
+    "nome": "Estância Velha",
+    "regiao": "Quadrante Nordeste",
+    "diasSeletiva": ["Seg", "Qua", "Qui"],
+    "turnoSeletiva": {
+      "Seg": ["Manhã", "Tarde"],
+      "Qua": ["Manhã", "Tarde"],
+      "Qui": ["Manhã", "Tarde"]
+    },
+    "diasOrganica": ["Ter", "Qui", "Sáb"],
+    "turnoOrganica": {
+      "Ter": ["Diurno"],
+      "Qui": ["Diurno"],
+      "Sáb": ["Diurno"]
+    }
+  },
+  {
+    "id": "igara",
+    "nome": "Igara",
+    "regiao": "Quadrante Nordeste",
+    "diasSeletiva": ["Seg", "Qua"],
+    "turnoSeletiva": {
+      "Seg": ["Manhã", "Tarde"],
+      "Qua": ["Manhã", "Tarde"]
+    },
+    "diasOrganica": ["Ter", "Qui", "Sáb"],
+    "turnoOrganica": {
+      "Ter": ["Noturno"],
+      "Qui": ["Noturno"],
+      "Sáb": ["Noturno"]
+    }
+  },
+  {
+    "id": "olaria",
+    "nome": "Olaria",
+    "regiao": "Quadrante Nordeste",
+    "diasSeletiva": ["Qua", "Sáb"],
+    "turnoSeletiva": {
+      "Qua": ["Manhã", "Tarde"],
+      "Sáb": ["Manhã"]
+    },
+    "diasOrganica": ["Ter", "Qui", "Sáb"],
+    "turnoOrganica": {
+      "Ter": ["Diurno"],
+      "Qui": ["Diurno"],
+      "Sáb": ["Diurno"]
+    }
+  },
+  {
+    "id": "sao-jose",
+    "nome": "São José",
+    "regiao": "Quadrante Nordeste",
+    "diasSeletiva": ["Ter", "Sex"],
+    "turnoSeletiva": {
+      "Ter": ["Manhã", "Tarde"],
+      "Sex": ["Manhã", "Tarde"]
+    },
+    "diasOrganica": ["Seg", "Qua", "Sex"],
+    "turnoOrganica": {
+      "Seg": ["Noturno"],
+      "Qua": ["Noturno"],
+      "Sex": ["Noturno"]
+    }
+  },
+  {
+    "id": "marechal-rondon",
+    "nome": "Marechal Rondon",
+    "regiao": "Centro-Norte",
+    "diasSeletiva": ["Ter", "Qui"],
+    "turnoSeletiva": {
+      "Ter": ["Manhã", "Tarde"],
+      "Qui": ["Manhã", "Tarde"]
+    },
+    "diasOrganica": ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
+    "turnoOrganica": {
+      "Seg": ["Noturno"],
+      "Ter": ["Noturno"],
+      "Qua": ["Noturno"],
+      "Qui": ["Noturno"],
+      "Sex": ["Noturno"],
+      "Sáb": ["Noturno"]
+    }
+  },
+  {
+    "id": "bela-vista",
+    "nome": "Bela Vista",
+    "regiao": "Bela Vista",
+    "diasSeletiva": [],
+    "turnoSeletiva": {},
+    "diasOrganica": ["Ter", "Qui", "Sáb"],
+    "turnoOrganica": {
+      "Ter": ["Noturno"],
+      "Qui": ["Noturno"],
+      "Sáb": ["Noturno"]
+    }
+  },
+  {
+    "id": "moinhos-de-vento",
+    "nome": "Moinhos de Vento",
+    "regiao": "Moinhos de Vento",
+    "diasSeletiva": [],
+    "turnoSeletiva": {},
+    "diasOrganica": ["Ter", "Qui", "Sáb"],
+    "turnoOrganica": {
+      "Ter": ["Noturno"],
+      "Qui": ["Noturno"],
+      "Sáb": ["Noturno"]
+    }
+  }
+]
