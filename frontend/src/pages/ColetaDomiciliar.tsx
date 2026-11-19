@@ -1,8 +1,9 @@
 import BairroData from "../data/bairros.json"
 import type { Bairro, TipoColeta } from "../types/index.ts"
-import CardColetaDom from "../components/CardColetaDom";
+import CardColetaDom from "../components/CardColetaDom.tsx";
 import { useState } from "react";
 import "../css/pages/coleta-domiciliar.css";
+
 export default function ColetaDomiciliar(){
     const bairros: Bairro[] = BairroData as Bairro[];
     const [busca, setBusca] = useState("");
