@@ -6,7 +6,6 @@ interface ICardeColetaDom{
 }
 function CardColetaDom({bairro, tipoColeta, onSelecionar}: ICardeColetaDom){
     const dias = tipoColeta === "seletiva" ? bairro.diasSeletiva : bairro.diasOrganica;
-    const turnos = tipoColeta === "seletiva" ? bairro.turnoSeletiva : bairro.turnoOrganica;
 
     return(
         <div className="card h-50 w-[260px] shrink-0">
