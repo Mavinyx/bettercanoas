@@ -35,3 +35,17 @@ Plataforma web para guia de descarte/coleta seletiva em Canoas (RS) e sistema ga
 - **IA:** Nunca acople `services/` ou `domain/` diretamente a um SDK de provedor; use sempre `AiProvider` / `AiProviderChain`.
 - **Segurança:** Apenas `/api/v1/auth/login`, `/api/v1/auth/register` e `/error` são públicos; demais rotas exigem `Bearer` token JWT.
 - **Nomenclatura:** Mantenha os padrões já existentes no projeto (campos de API/domínio em português onde já definidos nos DTOs e no schema).
+
+## Agent skills
+
+### Issue tracker
+
+Issues and specs are tracked in GitHub Issues (`Mavinyx/bettercanoas`) via `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Uses the default five canonical triage labels (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`). See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context repo (`GLOSSARY.md` + `docs/adr/` at the repo root). See `docs/agents/domain.md`.
