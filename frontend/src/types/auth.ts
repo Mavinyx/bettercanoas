@@ -14,7 +14,9 @@ export interface LoginResponse {
 }
 
 export interface User {
-  id: string | number;
+  id?: string | number;
   login: string;
   nome: string;
+  xp?: number;
+  papel?: string[];
 }

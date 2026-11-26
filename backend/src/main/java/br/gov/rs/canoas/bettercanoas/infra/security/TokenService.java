@@ -5,15 +5,19 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseCookie;
 import org.springframework.stereotype.Service;
 
+import java.time.Duration;
 import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
 
 @Service
 public class TokenService {
+
+    public static final String ACCESS_TOKEN_COOKIE = "access_token";
+    private static final Duration TOKEN_DURATION = Duration.ofHours(2);
 
     @Value("${api.security.token.secret:my-secret-key}")
     private String secret;
@@ -23,7 +27,7 @@ public class TokenService {
             Algorithm algorithm = Algorithm.HMAC256(secret);
             return JWT.create()
                     .withIssuer("bettercanoas")
-                    .withSubject(user.getLogin()) // Atualizado de getEmail() para getLogin()
+                    .withSubject(user.getLogin())
                     .withExpiresAt(genExpirationDate())
                     .sign(algorithm);
         } catch (JWTCreationException exception) {
@@ -44,7 +48,32 @@ public class TokenService {
         }
     }
 
+    public ResponseCookie createAuthCookie(String token, boolean secure) {
+        return ResponseCookie.from(ACCESS_TOKEN_COOKIE, token)
+                .httpOnly(true)
+                .secure(secure)
+                .path("/")
+                .maxAge(TOKEN_DURATION)
+                .sameSite(secure ? "None" : "Lax")
+                .build();
+    }
+
+    public ResponseCookie createClearAuthCookie(boolean secure) {
+        return ResponseCookie.from(ACCESS_TOKEN_COOKIE, "")
+                .httpOnly(true)
+                .secure(secure)
+                .path("/")
+                .maxAge(Duration.ZERO)
+                .sameSite(secure ? "None" : "Lax")
+                .build();
+    }
+
+    public boolean isSecureRequest(HttpServletRequest request) {
+        return request.isSecure()
+                || "https".equalsIgnoreCase(request.getHeader("X-Forwarded-Proto"));
+    }
+
     private Instant genExpirationDate() {
-        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
+        return Instant.now().plus(TOKEN_DURATION);
     }
 }

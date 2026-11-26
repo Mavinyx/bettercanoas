@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@import "../globals.css";
+
+#denuncias-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: calc(100% - 112px);
+  min-height: calc(100vh - 104px);
+  margin-left: 112px;
+  padding: 1.75rem clamp(1.25rem, 2.8vw, 2.75rem);
+}
+
+.denuncias-grid {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.75rem;
+  width: 100%;
+}
+
+.denuncias-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex: 1 1 46%;
+  min-width: 0;
+}
+
+.denuncias-right-col {
+  flex: 1 1 54%;
+  min-width: 0;
+  position: sticky;
+  top: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+  .denuncias-grid {
+    flex-direction: column;
+  }
+
+  .denuncias-left-col,
+  .denuncias-right-col {
+    flex: 0 0 auto;
+    width: 100%;
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  #denuncias-page {
+    width: calc(100% - 76px);
+    margin-left: 76px;
+    padding: 1rem;
+    gap: 1.25rem;
+  }
+}

@@ -1,47 +1,20 @@
-import { Route, Routes, Link, useNavigate } from "react-router-dom";
+import { Route, Routes, Link, Navigate, useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Guias from "./pages/Guias";
 import ColetaDomiciliar from "./pages/ColetaDomiciliar";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import DenunciasPage from "./pages/DenunciasPage";
 import { AuthProvider, useAuth } from "./context/AuthContext";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import logo from "./assets/logo.png";
 
-function AreaUsuarioPage() {
-  const { user, logout } = useAuth();
-  const navigate = useNavigate();
-
-  function handleLogout() {
-    logout();
-    navigate("/login", { replace: true });
-  }
-
-  return (
-    <div className="max-w-2xl mx-auto my-8 p-6 card bg-base-100 shadow">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-xl font-bold">Área do Usuário</h1>
-          {user && (
-            <p className="text-sm mt-1">
-              Olá, {user.nome} ({user.login})
-            </p>
-          )}
-        </div>
-        <button type="button" onClick={handleLogout} className="btn btn-outline btn-sm">
-          Sair
-        </button>
-      </div>
-    </div>
-  );
-}
-
 function AppContent() {
-  const { isAuthenticated, user, logout } = useAuth();
+  const { isAuthenticated, logout } = useAuth();
   const navigate = useNavigate();
 
-  function handleLogout() {
-    logout();
+  async function handleLogout() {
+    await logout();
     navigate("/login", { replace: true });
   }
 
@@ -64,21 +37,22 @@ function AppContent() {
 
           {isAuthenticated ? (
             <>
-              <Link to="/denuncias/nova" className="site-nav__link">
-                <span>Denunciar</span>
-              </Link>
-              <Link to="/denuncias/historico" className="site-nav__link">
-                <span>Histórico</span>
-              </Link>
               <Link to="/denuncia" className="site-nav__link">
-                <span>{user?.nome ?? "Conta"}</span>
+                <i className="fa-solid fa-bullhorn"></i>
+                <span>Denúncia</span>
               </Link>
-              <button type="button" onClick={handleLogout} className="site-nav__link">
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="site-nav__link cursor-pointer bg-transparent border-0"
+              >
+                <i className="fa-solid fa-right-from-bracket"></i>
                 <span>Sair</span>
               </button>
             </>
           ) : (
             <Link to="/login" className="site-nav__link">
+              <i className="fa-solid fa-right-to-bracket"></i>
               <span>Login</span>
             </Link>
           )}
@@ -99,34 +73,22 @@ function AppContent() {
         <Route path="/registro" element={<RegisterPage />} />
         <Route path="/cadastro" element={<RegisterPage />} />
 
-        {/* Rotas protegidas */}
+        {/* Rota unificada de denúncias e mapa de bosses */}
         <Route
           path="/denuncia"
           element={
             <ProtectedRoute>
-              <AreaUsuarioPage />
+              <DenunciasPage />
             </ProtectedRoute>
           }
         />
         <Route
           path="/denuncias/nova"
-          element={
-            <ProtectedRoute>
-              <div className="max-w-2xl mx-auto my-8 p-6 card bg-base-100 shadow">
-                <h1 className="text-xl font-bold">Envio de Denúncia</h1>
-              </div>
-            </ProtectedRoute>
-          }
+          element={<Navigate to="/denuncia" replace />}
         />
         <Route
           path="/denuncias/historico"
-          element={
-            <ProtectedRoute>
-              <div className="max-w-2xl mx-auto my-8 p-6 card bg-base-100 shadow">
-                <h1 className="text-xl font-bold">Histórico de Denúncias</h1>
-              </div>
-            </ProtectedRoute>
-          }
+          element={<Navigate to="/denuncia?aba=historico" replace />}
         />
       </Routes>
     </>

@@ -5,8 +5,11 @@ import br.gov.rs.canoas.bettercanoas.domain.user.UserRepository;
 import br.gov.rs.canoas.bettercanoas.domain.user.*;
 import br.gov.rs.canoas.bettercanoas.domain.user.User;
 import br.gov.rs.canoas.bettercanoas.infra.security.TokenService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -27,13 +30,27 @@ public class AuthenticationController {
     private final PasswordEncoder passwordEncoder;
 
     @PostMapping("/login")
-    public ResponseEntity<LoginResponseDTO> login(@RequestBody @Valid LoginRequestDTO data) {
+    public ResponseEntity<LoginResponseDTO> login(
+            @RequestBody @Valid LoginRequestDTO data,
+            HttpServletRequest request
+    ) {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
 
         var token = tokenService.generateToken((User) Objects.requireNonNull(auth.getPrincipal()));
+        ResponseCookie authCookie = tokenService.createAuthCookie(token, tokenService.isSecureRequest(request));
 
-        return ResponseEntity.ok(new LoginResponseDTO(token));
+        return ResponseEntity.ok()
+                .header(HttpHeaders.SET_COOKIE, authCookie.toString())
+                .body(new LoginResponseDTO(token));
+    }
+
+    @PostMapping("/logout")
+    public ResponseEntity<Void> logout(HttpServletRequest request) {
+        ResponseCookie clearCookie = tokenService.createClearAuthCookie(tokenService.isSecureRequest(request));
+        return ResponseEntity.noContent()
+                .header(HttpHeaders.SET_COOKIE, clearCookie.toString())
+                .build();
     }
 
     @PostMapping("/register")

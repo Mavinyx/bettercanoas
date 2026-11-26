@@ -38,7 +38,10 @@ export default function LoginPage(){
             navigate(destino, { replace: true });
         } catch (err) {
             setPassword("");
-                if (err instanceof ApiError && (err.status === 401 || err.status === 400)) {
+                if (
+                    err instanceof ApiError &&
+                    (err.status === 401 || err.status === 403 || err.status === 400)
+                ) {
                     setCredentialsError("Login ou senha inválidos.");
             } else {
                 setCredentialsError(

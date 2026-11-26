@@ -19,4 +19,9 @@ export const authService = {
         method: "GET",
         });
     },
+    async logout(): Promise<void> {
+        return apiFetch<void>("/api/v1/auth/logout", {
+            method: "POST",
+        });
+    },
 };
