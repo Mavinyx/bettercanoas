@@ -30,7 +30,8 @@ services:
     environment:
       AI_API_KEY: ${AI_API_KEY:?Defina AI_API_KEY no arquivo .env}
       AI_PROVIDER_NAME: ${AI_PROVIDER_NAME:-default}
-      AI_MODEL: ${AI_MODEL:-gemini-3.5-flash}
+      AI_MODEL: ${AI_MODEL:-${GEMINI_MODEL:-gemini-3.5-flash}}
+      AI_FALLBACK_MODEL: ${AI_FALLBACK_MODEL:-${GEMINI_FALLBACK_MODEL:-gemini-2.5-flash-lite}}
       API_SECURITY_TOKEN_SECRET: ${API_SECURITY_TOKEN_SECRET:-my-secret-key}
       DATABASE_URL: postgresql://postgres:5432/bettercanoas_db
       DATABASE_USERNAME: ${POSTGRES_USER:-postgres}

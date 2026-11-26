@@ -13,6 +13,8 @@ import org.springframework.ai.retry.RetryUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+import org.springframework.core.annotation.Order;
 import org.springframework.core.retry.RetryTemplate;
 import org.springframework.util.StringUtils;
 
@@ -44,21 +46,55 @@ public class AiClientConfig {
                 .apiKey(key)
                 .httpOptions(HttpOptions.builder()
                         .timeout(60_000)
-                        .retryOptions(HttpRetryOptions.builder().attempts(1).build())
+                        .retryOptions(HttpRetryOptions.builder().attempts(2).build())
                         .build())
                 .build();
     }
 
     @Bean
+    @Primary
     public GoogleGenAiChatModel aiChatModel(
             Client aiProviderClient,
             @Value("${ai.provider.model:gemini-3.5-flash}") String defaultModel
     ) {
-        LOGGER.info("=== [BETTERCANOAS AI] Configurando o modelo de IA ===");
-        LOGGER.info("=== Modelo Primário Alvo: " + defaultModel);
+        LOGGER.info("=== [BETTERCANOAS AI] Configurando modelo primário de IA: " + defaultModel + " ===");
+        return buildChatModel(aiProviderClient, defaultModel);
+    }
 
+    @Bean
+    public ChatClient.Builder chatClientBuilder(GoogleGenAiChatModel chatModel) {
+        return ChatClient.builder(chatModel);
+    }
+
+    @Bean
+    @Order(0)
+    public AiProvider primaryAiProvider(
+            GoogleGenAiChatModel primaryChatModel,
+            @Value("${ai.provider.name:default}") String providerName,
+            @Value("${ai.provider.model:gemini-3.5-flash}") String primaryModel
+    ) {
+        ChatClient client = ChatClient.builder(primaryChatModel).build();
+        return new SpringAiProvider(client, providerName + "-primary(" + primaryModel + ")");
+    }
+
+    @Bean
+    @Order(1)
+    public AiProvider fallbackAiProvider(
+            Client aiProviderClient,
+            @Value("${ai.provider.name:default}") String providerName,
+            @Value("${ai.provider.model:gemini-3.5-flash}") String primaryModel,
+            @Value("${ai.provider.fallback-model:gemini-2.5-flash-lite}") String fallbackModel
+    ) {
+        String resolvedFallback = resolveDistinctFallbackModel(primaryModel, fallbackModel);
+        LOGGER.info("=== [BETTERCANOAS AI] Configurando modelo de fallback de IA: " + resolvedFallback + " ===");
+        GoogleGenAiChatModel fallbackChatModel = buildChatModel(aiProviderClient, resolvedFallback);
+        ChatClient client = ChatClient.builder(fallbackChatModel).build();
+        return new SpringAiProvider(client, providerName + "-fallback(" + resolvedFallback + ")");
+    }
+
+    private GoogleGenAiChatModel buildChatModel(Client aiProviderClient, String modelName) {
         GoogleGenAiChatOptions options = GoogleGenAiChatOptions.builder()
-                .model(defaultModel)
+                .model(modelName)
                 .temperature(0.0)
                 .build();
 
@@ -75,8 +111,13 @@ public class AiClientConfig {
         );
     }
 
-    @Bean
-    public ChatClient.Builder chatClientBuilder(GoogleGenAiChatModel chatModel) {
-        return ChatClient.builder(chatModel);
+    private String resolveDistinctFallbackModel(String primaryModel, String configuredFallback) {
+        if (StringUtils.hasText(configuredFallback)
+                && !configuredFallback.trim().equalsIgnoreCase(primaryModel.trim())) {
+            return configuredFallback.trim();
+        }
+        return "gemini-2.5-flash-lite".equalsIgnoreCase(primaryModel.trim())
+                ? "gemini-2.5-flash"
+                : "gemini-2.5-flash-lite";
     }
 }

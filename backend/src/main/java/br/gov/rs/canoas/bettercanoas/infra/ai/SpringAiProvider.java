@@ -3,12 +3,7 @@ package br.gov.rs.canoas.bettercanoas.infra.ai;
 import br.gov.rs.canoas.bettercanoas.domain.ai.AiAnalysisResult;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.content.Media;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
 
-@Component
-@Order(0)
 public class SpringAiProvider implements AiProvider {
 
     private static final String INSTRUCTION =
@@ -27,11 +22,8 @@ public class SpringAiProvider implements AiProvider {
     private final ChatClient chatClient;
     private final String providerName;
 
-    public SpringAiProvider(
-            ChatClient.Builder chatClientBuilder,
-            @Value("${ai.provider.name:default}") String providerName
-    ) {
-        this.chatClient = chatClientBuilder.build();
+    public SpringAiProvider(ChatClient chatClient, String providerName) {
+        this.chatClient = chatClient;
         this.providerName = providerName;
     }
 
